@@ -15,11 +15,17 @@ const sendMessage =  (client, nro, mensaje) => {
    y seleccionarlos de manera aleatoria
 */
 const createMessage = (nombre, turno) =>{ 
-    msg = 'Hola '+`${nombre}`+'😃!\n'+
-           "AfriBot 🤖 te recuerda que tienes cita con el "+ `${turno}`+ " !\n"+
-           "💩​"    
-    return msg 
+    const msg = [{message1: 'Hola '+`${nombre}`+'😃!\n'+'Queremos recordarte que tienes cita con el'+ `${turno}`+ ' !\n'+'🥰​​'},
+    {message1: `${nombre}`+'Se agendo correctamente tu turno de 👩‍⚕️​ \n'+`${turno}`+'Gracias por elegirnos!'},
+    {message1:'Hola '+`${nombre}`+'tienes tu turno con el '+`${turno}`+'👩‍⚕️\n'+'Gracias por elegirnos!'},
+    {message1:'Su turno con '+`${turno}`+'se ha agendado 👩‍⚕️\n'+`${nombre}`+' te esperamos😃!'},
+    {message1:'Este es un recordatorio de que ha elegido turno con la especialidad '+`${turno}`+'\n'+`${nombre}`+' te esperamos😃!'}]
+    
+    const aleatorio = msg[Math.floor(Math.random()* msg.length)] 
+    return aleatorio 
 }
+
+
 
 
 
