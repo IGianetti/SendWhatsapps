@@ -11,22 +11,17 @@ const sendMessage =  (client, nro, mensaje) => {
 }
 
 /* Creamos el mensaje personalizado a enviar
-   lo ideal seria tener multiples mensajes
-   y seleccionarlos de manera aleatoria
+   Selecciona entre multiples mensajes de manera aleatoria
 */
-const createMessage = (nombre, turno) =>{ 
-    const msg = [{message1: 'Hola '+`${nombre}`+'😃!\n'+'Queremos recordarte que tienes cita con el'+ `${turno}`+ ' !\n'+'🥰​​'},
-    {message1: `${nombre}`+'Se agendo correctamente tu turno de 👩‍⚕️​ \n'+`${turno}`+'Gracias por elegirnos!'},
-    {message1:'Hola '+`${nombre}`+'tienes tu turno con el '+`${turno}`+'👩‍⚕️\n'+'Gracias por elegirnos!'},
-    {message1:'Su turno con '+`${turno}`+'se ha agendado 👩‍⚕️\n'+`${nombre}`+' te esperamos😃!'},
-    {message1:'Este es un recordatorio de que ha elegido turno con la especialidad '+`${turno}`+'\n'+`${nombre}`+' te esperamos😃!'}]
+const createMessage = (nombre, turno, fecha) =>{ 
+    const msg = [{message1: 'Hola '+`${nombre}`+'! 😃\n'+'Queremos recordarte que tienes cita con '+ `${turno}`+ ' para el '+`${fecha}`+' 🥰​​'},
+    {message1: `${nombre}`+' Se agendo correctamente tu turno del '+`${fecha}`+', para ​'+`${turno}`+'👩‍⚕️\n Gracias por elegirnos!'},
+    {message1:'Hola '+`${nombre}`+' el '+`${fecha}`+' tienes tu turno con el '+`${turno}`+'👩‍⚕️\n'+'Gracias por elegirnos!'},
+    {message1:'Su turno con '+`${turno}`+' se ha agendado 👩‍⚕️\n'+`${nombre}`+' te esperamos el '+`${fecha}`+'!'},
+    {message1:'Este es un recordatorio de que ha elegido turno el dia '+`${fecha}`+', con la especialidad '+`${turno}`+'\n'+`${nombre}`+' te esperamos😃!'}]
     
     const aleatorio = msg[Math.floor(Math.random()* msg.length)] 
     return aleatorio.message1 
 }
-
-
-
-
 
 module.exports = { sendMessage, createMessage }
