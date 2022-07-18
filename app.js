@@ -11,9 +11,9 @@ app.use(express.urlencoded({extended: true}))
 
 const sendWithApi = (req, res) => {
     
-    const {name, to, doc} = req.body
-    console.log(name, to, doc)
-    let msg = createMessage(name, doc)
+    const {name, to, doc, fecha} = req.body
+    console.log(name, to, doc, fecha)
+    let msg = createMessage(name, doc, fecha)
     const nro = `549${to}@c.us`   
     sendMessage(client, nro, msg)
     res.writeHead(302, {
