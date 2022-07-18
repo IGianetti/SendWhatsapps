@@ -15,10 +15,8 @@ const sendWithApi = (req, res) => {
     console.log(name, to, doc)
     let msg = createMessage(name, doc)
     const nro = `549${to}@c.us`   
-    sendMessage(client, nro, msg)      
-   
-    
-    res.status({ status: 200 })
+    sendMessage(client, nro, msg)
+    res.send({ status: 'Enviado!' })
 }
 
 app.post('/send', sendWithApi)

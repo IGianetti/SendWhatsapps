@@ -22,7 +22,7 @@ const createMessage = (nombre, turno) =>{
     {message1:'Este es un recordatorio de que ha elegido turno con la especialidad '+`${turno}`+'\n'+`${nombre}`+' te esperamos😃!'}]
     
     const aleatorio = msg[Math.floor(Math.random()* msg.length)] 
-    return aleatorio 
+    return aleatorio.message1 
 }
 
 
