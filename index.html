@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <script src="./app.js"></script>
+    <title>Enviador de WhatsApp</title>
+</head>
+<body>
+    <div class="container py-2">
+        <p class="lead" style="background-color: black; padding: 10px; color: white; font-weight: bold; border-radius: 10px">Reserve turno</p>
+        
+        <form action="http://localhost:9000/send" method="post">
+            <input type="text" name="name" id="nombre" placeholder="Ingrese su nombre" class="form-control my-2">
+            <input type="tel" name="to" id="tel" placeholder="Ingrese su celular" class="form-control my-2">
+            <select class="form-select" name="doc" id="turno">
+                <option value="Dentista">Dentista</option>
+                <option value="Clinico">Clinico</option>
+                <option value="Kinesiologo">Kinesiologo</option>
+            </select>
+            <button type="submit" id="boton" class="btn btn-success mt-4" onclick="stopDefault(event)">Guardar</button>
+        </form>
+
+    </div>
+    <div class="container">
+        <table class="table" id="tabla">
+            <thead class="thead-dark">
+                <tr>
+                    <th>Nombre</th>
+                    <th>Celular</th>
+                    <th>Turno</th>
+                </tr>
+            </thead>
+            
+        </table>
+    </div>
+    
+</body>
+<!-- JavaScript Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+
+</html>
