@@ -16,7 +16,10 @@ const sendWithApi = (req, res) => {
     let msg = createMessage(name, doc)
     const nro = `549${to}@c.us`   
     sendMessage(client, nro, msg)
-    res.send({ status: 'Enviado!' })
+    res.writeHead(302, {
+        Location: 'http://127.0.0.1:5500/index.html'
+    });
+    res.end();
 }
 
 app.post('/send', sendWithApi)
@@ -46,7 +49,8 @@ client.on('auth_failure', msg => {
 
 client.initialize();
 
-app.listen(9000, () => {
-    console.log("API ARRIBA")
+const PORT = 9000
+app.listen(PORT, () => {
+    console.log("API escuchando en puerto: ", PORT)
 })
 
