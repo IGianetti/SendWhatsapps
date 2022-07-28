@@ -13,9 +13,7 @@ function capturar(){
     let fechaCapura = document.getElementById("fecha").value
 
     nuevaPersona = new Persona(nombreCapura, telCapura, turnoCapura, fechaCapura)
-    llenarArray()
-
-      
+    llenarArray()     
           
 }
 
